@@ -1,11 +1,10 @@
 import React from "react";
-import { Routes } from "./src/routes";
-import { Clonetwt } from "./src/screens/clonetwt";
-import { Home } from "./src/screens/Home"
+import { Rotas } from "./src/routes";
+
 
 const App = () =>  {
   return (
-<Home />
+    <Rotas />
   )
 }
 export default App

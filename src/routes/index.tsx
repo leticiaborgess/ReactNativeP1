@@ -1,27 +1,25 @@
-import React from 'react';
-import { NavigationContainer } from '@react-navigation/native';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { Clonetwt } from '../screens/clonetwt';
-import { Senha } from '../screens/senha';
-import { Home } from '../screens/Home';
+import { Login } from "../screens/Login";
+import { Home } from "../screens/Home"
+import { Senha } from "../screens/Senha";
+import { createStackNavigator } from "@react-navigation/stack";
+import { NavigationContainer } from "@react-navigation/native";
 
-const Tab = createBottomTabNavigator();
+const Stack = createStackNavigator();
 
-export type ListaParametrosRotasTab = {
-  Clonetwt: undefined;
-  Senha: undefined;
-  Home: undefined;
-}
-
-export const Routes = () => {
-
-    return (
-        <NavigationContainer>
-            <Tab.Navigator>
-                <Tab.Screen name="Login" component={Clonetwt} />
-                <Tab.Screen name="Senha" component={Senha} />
-                <Tab.Screen name="Home" component={Home} />
-            </Tab.Navigator>
+export const Rotas = () => {
+  return (
+    <NavigationContainer>
+            <Stack.Navigator
+                initialRouteName='Login'
+                screenOptions={{
+                    headerShown: false,
+                }}
+            >
+                <Stack.Screen name='Login' component={Login}/>
+                <Stack.Screen name='Senha' component={Senha}/>
+                <Stack.Screen name='Home' component={Home}/>
+            </Stack.Navigator>
         </NavigationContainer>
-    );
-};
+  );
+}
+    

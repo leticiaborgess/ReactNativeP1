@@ -3,16 +3,12 @@ import { View, Image, ScrollView, TouchableOpacity } from "react-native";
 import { styles } from "../Home/styles";
 import Twitter from "../../assets/images/download.png"
 import Perfil from "../../assets/images/perfil.jpg"
-import Coment from "../../assets/images/coment.png"
-import Rt from "../../assets/images/rt.png"
-import Like from "../../assets/images/like.png"
-import Share from "../../assets/images/share.png"
 import Timeline from "../../assets/images/timeline.png"
 import Newtweet from "../../assets/images/newtweet.png"
 import Main from "../../assets/images/main.png"
 import Search from "../../assets/images/search.png"
-import Notif from "../../assets/images/notif.png"
-import Message from "../../assets/images/message.png"
+import Notif from "../../assets/images/icons/notif.png"
+import Message from "../../assets/images/icons/message.png"
 import { CardTweet } from "../../Components/CardTweet";
 
 export const Home = () => {
