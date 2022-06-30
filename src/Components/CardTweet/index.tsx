@@ -1,17 +1,32 @@
-import React from "react";
+import React, { useState } from "react";
 import { Image, Text, TouchableOpacity, View } from "react-native";
 import { styles } from "../CardTweet/styles";
 import Perfil from "../../assets/images/perfil.jpg"
 import Coment from "../../assets/images/coment.png"
 import Rt from "../../assets/images/rt.png"
 import Like from "../../assets/images/like.png"
-import Share from "../../assets/images/share.png"
+import Share from "../../assets/images/icons/share.png"
 import Ponto from "../../assets/images/ponto.png"
+import Like2 from "../../assets/images/like2.png"
 import moment from "moment";
 
-export const CardTweet = () => {
-    return (
 
+export const CardTweet = () => {
+
+    const [style, setStyle] = useState<boolean>(true);
+    const [like, setLike] = useState<boolean>(true);
+
+    function mudaCor() {
+        if (style === false) {
+            setStyle(true);
+            setLike(true);
+        } else {
+            setStyle(false);
+            setLike(false)
+        }
+    }
+
+    return (
 
         <View style={styles.card}>
 
@@ -21,7 +36,7 @@ export const CardTweet = () => {
 
             <View style={styles.header}>
 
-                <View style={{flexDirection:'row'}}>
+                <View style={{ flexDirection: 'row' }}>
                     <Text style={styles.nome}>Letícia</Text>
 
                     <Text style={styles.username}>@letech  •  {moment.utc().startOf('hours').fromNow()}</Text>
@@ -37,7 +52,11 @@ export const CardTweet = () => {
                 <View style={styles.navbar}>
                     <TouchableOpacity><Image source={Coment} style={styles.nav} /></TouchableOpacity>
                     <TouchableOpacity><Image source={Rt} style={styles.nav} /></TouchableOpacity>
-                    <TouchableOpacity><Image source={Like} style={styles.nav} /></TouchableOpacity>
+                    
+                        <TouchableOpacity onPress={mudaCor} >
+                            <Image source={style ? Like : Like2} style={styles.nav} />   
+                        </TouchableOpacity>
+                    
                     <TouchableOpacity><Image source={Share} style={styles.nav} /></TouchableOpacity>
                 </View>
             </View>

@@ -48,7 +48,7 @@ export const styles = StyleSheet.create({
     nav:{
         width: 20,
         height: 20,
-        tintColor: 'gray'
+        
     },
     navbar: {
         flex: 3,

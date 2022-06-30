@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import { View, Text, Image, TextInput, TouchableOpacity} from "react-native";
 import { styles } from "../Login/styles";
 import Twitter from "../../assets/images/download.png"
 import Sair from "../../assets/images/sair.png"
 
 export const Senha = ({navigation}) => {
+    
     return (
         <View style={styles.container}>
             
@@ -19,7 +20,7 @@ export const Senha = ({navigation}) => {
             <Text style={styles.title}>Digite sua senha</Text>
         
              <TextInput style={styles.input}
-             value='letxlet'
+             value='letech'
              placeholder="Celular, e-mail ou nome de usuário"/>
            
            <TextInput style={styles.input}
